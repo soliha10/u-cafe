@@ -13,7 +13,7 @@ export default function LoginPage() {
 			<img className='me-[100px] ' src={cafe} alt='cafe' />
 			<div className='pt-[288px] w-[357px] '>
 				<a className='ms-[99px] inline-block mb-6' href='/'>
-					<img src={logo} alt='' />
+					<img src={logo} alt='pic' width={100} height={100} />
 				</a>
 				<h1 className='text-[#2F3138] text-2xl font-semibold mb-12 text-center'>
 					Вход в аккаунт
