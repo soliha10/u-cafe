@@ -1,0 +1,33 @@
+const Minus = () => {
+	return (
+		<svg
+			xmlns='http://www.w3.org/2000/svg'
+			width='22'
+			height='22'
+			viewBox='0 0 22 22'
+			fill='none'
+		>
+			<path
+				d='M21 11C21 5.47715 16.5228 1 11 1C5.47715 1 1 5.47715 1 11C1 16.5228 5.47715 21 11 21C16.5228 21 21 16.5228 21 11Z'
+				fill='white'
+				stroke='white'
+				stroke-width='1.5'
+			/>
+			<path
+				d='M21 11C21 5.47715 16.5228 1 11 1C5.47715 1 1 5.47715 1 11C1 16.5228 5.47715 21 11 21C16.5228 21 21 16.5228 21 11Z'
+				fill='white'
+				stroke='white'
+				stroke-width='1.5'
+			/>
+			<path
+				d='M15 11L7 11'
+				stroke='#2F3138'
+				stroke-width='1.5'
+				stroke-linecap='round'
+				stroke-linejoin='round'
+			/>
+		</svg>
+	);
+};
+
+export default Minus;

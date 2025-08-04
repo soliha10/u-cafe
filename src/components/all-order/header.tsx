@@ -1,11 +1,11 @@
 import { Link } from 'react-router-dom';
 import { Input } from '../ui/input';
-import logo from '../../assets/logo.svg';
-import search from '../../assets/search-icon.svg';
-import qr from '../../assets/qr-code.svg';
-import avatar from '../../assets/user_avatar.svg';
-import arrow from '../../assets/bottom-arrow.svg';
-import redCircle from '../../assets/circle-red.svg';
+import logo from '../../assets/images/logo.svg';
+import search from '../../assets/images/search-icon.svg';
+import qr from '../../assets/images/qr-code.svg';
+import avatar from '../../assets/images/user_avatar.svg';
+import arrow from '../../assets/images/bottom-arrow.svg';
+import redCircle from '../../assets/images/circle-red.svg';
 export default function Header() {
 	return (
 		<header className='border-b border-[#7d858b33] bg-[#F5F5F5]'>

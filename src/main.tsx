@@ -3,7 +3,7 @@ import { createRoot } from 'react-dom/client';
 import './index.css';
 import App from './App.tsx';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import AllOrder from './components/AllOrder/index.tsx';
+import AllOrder from './components/all-order/index.tsx';
 
 const router = createBrowserRouter([
 

@@ -1,8 +1,8 @@
-import cafe from '../../assets/cafe.png';
-import logo from '../../assets/logo-login.svg';
-import user from '../../assets/user-icon.svg';
-import enter from '../../assets/lock-login.svg';
-import lock from '../../assets/enter-lofin.svg';
+import cafe from '../../assets/images/cafe.png';
+import logo from '../../assets/images/logo-login.svg';
+import user from '../../assets/images/user-icon.svg';
+import enter from '../../assets/images/lock-login.svg';
+import lock from '../../assets/images/enter-lofin.svg';
 
 import { Input } from '../ui/input';
 import { Button } from '../ui/button';
