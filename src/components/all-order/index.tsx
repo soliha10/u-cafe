@@ -1,12 +1,11 @@
-import IssuedItem from "../common/issued-item";
-import Header from "./header";
+import AllOrderBody from './all-order-body/all-order-body';
+import Header from './header';
 
-export default function AllOrder(){
-  return(
-
-    <>
-    <Header/>
-    <IssuedItem/>
-    </>
-  )
+export default function AllOrder() {
+	return (
+		<>
+			<Header />
+			<AllOrderBody />
+		</>
+	);
 }
