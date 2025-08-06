@@ -15,14 +15,15 @@ export const buttonVariants = cva(
         ghost: 'hover:bg-accent hover:text-accent-foreground dark:hover:bg-accent/50',
         link: 'text-primary underline-offset-4 hover:underline',
         checkbox: 'bg-[#56F] rounded-[5px] cursor-pointer text-white ',
-        archive: 'bg-[#5566ff19] rounded-[5px] cursor-pointer ',
+        archive: 'bg-[#5566ff19] rounded-[5px] cursor-pointer text-[#5566FF] ',
       },
       size: {
         default: 'h-9 px-4 py-2 has-[>svg]:px-3',
         sm: 'h-8 rounded-md gap-1.5 px-3 has-[>svg]:px-2.5',
         lg: 'h-10 rounded-md px-6 has-[>svg]:px-4',
         icon: 'size-9',
-        checkbox: 'w-[148px] py-[10px] px-4 text-center ',
+        checkbox: 'w-[194.5px] py-[10px] px-4 text-center text-[14px] font-medium ',
+        create: 'w-[148px] py-[10px] px-4 text-center ',
       },
     },
     defaultVariants: {

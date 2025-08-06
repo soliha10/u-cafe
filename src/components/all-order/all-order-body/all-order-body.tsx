@@ -5,11 +5,12 @@ import { Label } from '../../ui/label';
 import NewOrders from './new-orders';
 import InProcessOrders from './in-process-orders';
 import Delivered from './delivered';
+import ChooseItem from '../choose-item/choose-item';
 
 export default function AllOrderBody() {
 	return (
 		<main>
-			<section className='border-b border-[#7d858b33]'>
+			<section className='border-b border-[#7d858b33] relative '>
 				<div className='w-full max-w-[1432px] px-5 mx-auto '>
 					<div className='flex items-center justify-between py-[15px] '>
 						<h1 className='text-2xl font-semibold text-[#2F3138]  '>
@@ -34,7 +35,7 @@ export default function AllOrderBody() {
 								<Label htmlFor='terms' className='text-[#2F3138] me-6'>
 									не оплаченные
 								</Label>
-								<Button variant={'checkbox'} size={'checkbox'}>
+								<Button variant={'checkbox'} size={'create'}>
 									<AddIcon />
 									Создать заказ
 								</Button>
@@ -42,17 +43,20 @@ export default function AllOrderBody() {
 						</div>
 					</div>
 				</div>
+				<ChooseItem/>
+
 			</section>
 
-			<section>
+			<section >
 				<div className='w-full max-w-[1432px] px-5 mx-auto '>
-					<div className='flex items-start gap-6'>
+					<div className='flex items-start gap-6 '>
 					<NewOrders/>
 					<InProcessOrders/>
 					<Delivered/>
 					</div>
 				</div>
 			</section>
+
 		</main>
 	);
 }
