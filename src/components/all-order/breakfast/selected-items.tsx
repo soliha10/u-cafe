@@ -20,9 +20,16 @@ import {
 	SelectTrigger,
 	SelectValue,
 } from '@/components/ui/select';
-import Archive from '@/assets/icons/archive';
 import Check from '@/assets/icons/check';
-export default function ChooseItem() {
+import {
+	Popover,
+	PopoverContent,
+	PopoverTrigger,
+} from '@/components/ui/popover';
+import { ChevronDownIcon } from 'lucide-react';
+import { Calendar } from '@/components/ui/calendar';
+import { useState } from 'react';
+export default function SelectedItems() {
 	const issueItems = [
 		{
 			pic: cake,
@@ -51,9 +58,12 @@ export default function ChooseItem() {
 		},
 	];
 
+	const [open, setOpen] = useState(false);
+	const [date, setDate] = useState<Date | undefined>(undefined);
+
 	return (
-		<div className='bg-[#D9D9D9] z-10 absolute right-0 top-0  w-screen'>
-			<div className='w-[500px] ms-auto  bg-white'>
+		<div className='  absolute right-0 top-0 '>
+			<div className='w-[505px] ms-auto  bg-white'>
 				<div className='pt-6 ps-6 w-[413px]  '>
 					<div className='flex items-center justify-between text-[#7D848B] text-[14px] mb-4  '>
 						<div>
@@ -141,9 +151,34 @@ export default function ChooseItem() {
 							</TableRow>
 
 							<TableRow className='flex items-center justify-between w-[413px] '>
-								<TableCell>Статус</TableCell>
-								<TableCell className='bg-[#F6E0DC] text-[#FF1F00] text-[14px] px-[10px] py-[5px] rounded-[5px] '>
-									не оплачено
+								<TableCell>Выберите дату</TableCell>
+								<TableCell>
+									<Popover open={open} onOpenChange={setOpen}>
+										<PopoverTrigger asChild>
+											<Button
+												variant='outline'
+												id='date'
+												className='w-[123px] justify-between font-normal'
+											>
+												{date ? date.toLocaleDateString() : 'Select date'}
+												<ChevronDownIcon />
+											</Button>
+										</PopoverTrigger>
+										<PopoverContent
+											className='w-auto overflow-hidden p-0'
+											align='start'
+										>
+											<Calendar
+												mode='single'
+												selected={date}
+												captionLayout='dropdown'
+												onSelect={(date) => {
+													setDate(date);
+													setOpen(false);
+												}}
+											/>
+										</PopoverContent>
+									</Popover>
 								</TableCell>
 							</TableRow>
 						</TableBody>
@@ -161,16 +196,11 @@ export default function ChooseItem() {
 					</Table>
 
 					<div className='flex items-center justify-between w-[413px] '>
-						<Button variant={'archive'} size={'checkbox'}>
-							<Archive />
-							Архивировать
-						</Button>
-						<Button variant={'checkbox'} size={'checkbox'}>
+						<Button className='w-full' variant={'checkbox'} size={'checkbox'}>
 							<Check /> Оплатить
 						</Button>
 					</div>
 				</div>
-				
 			</div>
 		</div>
 	);

@@ -17,6 +17,7 @@ export const buttonVariants = cva(
 				link: 'text-primary underline-offset-4 hover:underline',
 				checkbox: 'bg-[#56F] rounded-[5px] cursor-pointer text-white ',
 				archive: 'bg-[#5566ff19] rounded-[5px] cursor-pointer text-[#5566FF] ',
+				menu: ' border border-[rgba(125, 133, 139, 0.20)] rounded-[5px] bg-white '
 			},
 			size: {
 				default: 'h-9 px-4 py-2 ',
@@ -26,6 +27,7 @@ export const buttonVariants = cva(
 				checkbox:
 					'w-[194.5px] py-[10px] px-4 text-center text-[14px] font-medium ',
 				create: 'w-[148px] py-[10px] px-4 text-center ',
+				menu: 'w-[142px] py-3 px-4 font-medium '
 			},
 		},
 		defaultVariants: {
