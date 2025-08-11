@@ -28,6 +28,7 @@ import {
 import { ChevronDownIcon } from 'lucide-react';
 import { Calendar } from '@/components/ui/calendar';
 import { useState } from 'react';
+import EmptyLunch from '@/assets/icons/empty-lunch';
 export default function SelectedItems() {
 	const issueItems = [
 		{
@@ -64,11 +65,16 @@ export default function SelectedItems() {
 		<div className='  absolute right-0 top-0 '>
 			<div className='w-[505px] ms-auto  bg-white'>
 				<div className=' ps-6 w-[413px]  '>
-		
-					<ul className=' pt-4 flex flex-col gap-4 pb-11'>
+					<ul className='pt-4 flex flex-col gap-4 pb-11'>
 						{issueItems.map(({ pic, name, price }) => (
 							<IssuedItem key={name} pic={pic} name={name} price={price} />
 						))}
+						{!issueItems.length && (
+							<li className='flex pt-[193px] pb-[183px]  flex-col items-center justify-center'>
+								<EmptyLunch />
+								<span>Начните добавлять блюда</span>
+							</li>
+						)}
 					</ul>
 				</div>
 
@@ -77,12 +83,12 @@ export default function SelectedItems() {
 						<TableBody className='w-full flex flex-col gap-4 pb-4 text-[14px] '>
 							<TableRow className='flex items-center justify-between w-[413px] '>
 								<TableCell>ID клиента</TableCell>
-								<TableCell>12348293</TableCell>
+								<TableCell>{issueItems.length ? '12348293' : 'Неопределено'}</TableCell>
 							</TableRow>
 
 							<TableRow className='flex items-center justify-between w-[413px] '>
 								<TableCell>Общее количество позиций</TableCell>
-								<TableCell>5 позиций</TableCell>
+								<TableCell>{issueItems.length ? '5' : '0'} позиций</TableCell>
 							</TableRow>
 
 							<TableRow className='flex items-center justify-between w-[413px] '>
@@ -135,37 +141,39 @@ export default function SelectedItems() {
 								</TableCell>
 							</TableRow>
 
-							<TableRow className='flex items-center justify-between w-[413px] '>
-								<TableCell>Выберите дату</TableCell>
-								<TableCell>
-									<Popover open={open} onOpenChange={setOpen}>
-										<PopoverTrigger asChild>
-											<Button
-												variant='outline'
-												id='date'
-												className='w-[123px] justify-between font-normal'
+							{issueItems.length && (
+								<TableRow className='flex items-center justify-between w-[413px] '>
+									<TableCell>Выберите дату</TableCell>
+									<TableCell>
+										<Popover open={open} onOpenChange={setOpen}>
+											<PopoverTrigger asChild>
+												<Button
+													variant='outline'
+													id='date'
+													className='w-[123px] justify-between font-normal'
+												>
+													{date ? date.toLocaleDateString() : 'Выберите дату'}
+													<ChevronDownIcon />
+												</Button>
+											</PopoverTrigger>
+											<PopoverContent
+												className='w-auto overflow-hidden p-0'
+												align='start'
 											>
-												{date ? date.toLocaleDateString() : 'Выберите дату'}
-												<ChevronDownIcon />
-											</Button>
-										</PopoverTrigger>
-										<PopoverContent
-											className='w-auto overflow-hidden p-0'
-											align='start'
-										>
-											<Calendar
-												mode='single'
-												selected={date}
-												captionLayout='dropdown'
-												onSelect={(date) => {
-													setDate(date);
-													setOpen(false);
-												}}
-											/>
-										</PopoverContent>
-									</Popover>
-								</TableCell>
-							</TableRow>
+												<Calendar
+													mode='single'
+													selected={date}
+													captionLayout='dropdown'
+													onSelect={(date) => {
+														setDate(date);
+														setOpen(false);
+													}}
+												/>
+											</PopoverContent>
+										</Popover>
+									</TableCell>
+								</TableRow>
+							)}
 						</TableBody>
 
 						<TableFooter>
@@ -174,14 +182,19 @@ export default function SelectedItems() {
 									Итоговая сумма
 								</TableCell>
 								<TableCell className='text-right text-2xl font-bold '>
-									213 000 UZS
+									{issueItems.length ? '213 000 UZS' : '0 UZS'}
 								</TableCell>
 							</TableRow>
 						</TableFooter>
 					</Table>
 
 					<div className='flex items-center justify-between w-[413px] '>
-						<Button className='w-full' variant={'checkbox'} size={'checkbox'}>
+						<Button
+							disabled={issueItems.length === 0}
+							className='w-full'
+							variant={'checkbox'}
+							size={'checkbox'}
+						>
 							<Check /> Оплатить
 						</Button>
 					</div>

@@ -18,6 +18,7 @@ import bliniCurd from '@/assets/images/blini-curd.png';
 import sweet from '@/assets/images/sweet-berry.png';
 import BreakfastItem from '@/components/common/breakfast-item';
 import SelectedItems from './selected-items';
+// import { useState } from 'react';
 
 export default function Breakfast() {
 	const menuItems = [
@@ -85,6 +86,8 @@ export default function Breakfast() {
 		},
 	];
 
+	// const [ischeched, setIsChecked] = useState(false);
+
 	return (
 		<>
 			<Header />
@@ -92,8 +95,6 @@ export default function Breakfast() {
 				<div className='w-full max-w-[1432px] px-5 mx-auto '>
 					<div className='flex items-center '>
 						<div className='flex items-center w-[950px] bg-[#F5F5F5] border-r  border-[#7d858b33] '>
-							{/*  */}
-
 							<LeftArrow />
 							<Button className=' h-[70px] ms-[30px] py-[23.5px] px-4 flex items-center gap-3 rounded-none bg-white text-[#2F3138] shadow-none border-r border-[#7d858b33]  '>
 								Корзина №1 <XBtn />
@@ -136,7 +137,7 @@ export default function Breakfast() {
 
 							<ul className='flex flex-col gap-4'>
 								{breakfastItems.map(({ pic, name, price }) => (
-									<BreakfastItem pic={pic} name={name} price={price} />
+									<BreakfastItem pic={pic} name={name} price={price}  />
 								))}
 							</ul>
 						</div>
