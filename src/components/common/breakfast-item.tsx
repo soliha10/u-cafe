@@ -31,7 +31,7 @@ export default function BreakfastItem({
 					type='checkbox'
 					className='w-[18px] h-[18px] checked:bg-[#56F] rounded-[3px] border-[#7D858B · 20%] me-5 '
 				/>
-				<img src={pic} alt='' />
+				<img src={pic} alt='' width={65} height={65} className='rounded-[8px] h-[65px] ' />
 				<div className='flex flex-col ms-4'>
 					<strong className='font-medium text-[#2F3138]  '>{name}</strong>
 					<span className='text-[#7D848B] text-[14px] '>{price}</span>

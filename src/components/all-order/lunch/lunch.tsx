@@ -1,6 +1,5 @@
 import LeftArrow from '@/assets/icons/left-arrow';
 import Header from '../header';
-import BreakfastIcon from '@/assets/icons/breakfast';
 import Cup from '@/assets/icons/cup';
 import LunchBlue from '@/assets/icons/lunch-blue';
 import Chocolate from '@/assets/icons/chocolate';
@@ -12,12 +11,20 @@ import BreakfastItem from '@/components/common/breakfast-item';
 import kotlet from '@/assets/images/kotlet.png';
 import lapsha from '@/assets/images/lapsha.png';
 import SelectedItems from './selected-items';
-
+import manti from '@/assets/images/manti.png';
+import teftel from '@/assets/images/teftel.png';
+import chickenKotlet from '@/assets/images/chicken-kotlet.png';
+import gulyash from '@/assets/images/gulyash.png';
+import lagman from '@/assets/images/lagman.png';
+import bedro from '@/assets/images/bedro.png';
+import jarko from '@/assets/images/jarko.png';
+import garnir from '@/assets/images/garnir.png';
+import Eggs from '@/assets/icons/eggs';
 
 export default function Lunch() {
 	const menuItems = [
 		{
-			pic: <BreakfastIcon />,
+			pic: <Eggs />,
 			name: 'Завтраки',
 		},
 		{
@@ -42,26 +49,76 @@ export default function Lunch() {
 		},
 	];
 
-	const lunchItems = [
+	const mondayItems = [
 		{
 			pic: kotlet,
 			name: 'Говяжьи котлеты 2 шт. с подливой / Гарнир рис+гречка / Хлеб / Салат',
 			price: 'В наличии: 130 шт.',
-      checked: false
+			checked: false,
 		},
 		{
 			pic: lapsha,
 			name: 'Курица в сливочном соусе / Гарнир лапша триолли / Хлеб / Салат',
 			price: 'В наличии: 130 шт.',
-      checked: false
+			checked: false,
 		},
 	];
-	// const [isChecked, setIsChecked] = useState(lunchItems);
-
-
-  // const handleCheckbox = (name: string) => {
-  //   setIsChecked(prev => prev.map(item => item.name === name ? {...item, checked: !item.checked} : item))
-  // }
+	const tuesdayItems = [
+		{
+			pic: manti,
+			name: 'Манты с говядиной / Кефир / Хлеб / Салат',
+			price: 'В наличии: 130 шт.',
+			checked: false,
+		},
+		{
+			pic: teftel,
+			name: 'Тефтели с подливой / Гарнир картофель фри / Хлеб / Салат',
+			price: 'В наличии: 130 шт.',
+			checked: false,
+		},
+	];
+	const wednesdayItems = [
+		{
+			pic: chickenKotlet,
+			name: 'Куриные котлеты 2 шт / Гарнир рис+пюре / Хлеб / Салат',
+			price: 'В наличии: 130 шт.',
+			checked: false,
+		},
+		{
+			pic: gulyash,
+			name: 'Гуляш с говядиной / Гарнир рис+пюре / Хлеб / Салат',
+			price: 'В наличии: 130 шт.',
+			checked: false,
+		},
+	];
+	const thirsdayItems = [
+		{
+			pic: lagman,
+			name: 'Ковурма лагман с яйцом / Хлеб / Салат',
+			price: 'В наличии: 130 шт.',
+			checked: false,
+		},
+		{
+			pic: bedro,
+			name: 'Куриное бедро / Гарнир картофель по деревенски / Хлеб / Салат',
+			price: 'В наличии: 130 шт.',
+			checked: false,
+		},
+	];
+	const fridayItems = [
+		{
+			pic: jarko,
+			name: 'Жаркое с говядиной / Хлеб / Салат',
+			price: 'В наличии: 130 шт.',
+			checked: false,
+		},
+		{
+			pic: garnir,
+			name: 'Курица с овощами / Гарнир рис+кукуруза / Хлеб / Салат',
+			price: 'В наличии: 130 шт.',
+			checked: false,
+		},
+	];
 
 	return (
 		<>
@@ -115,23 +172,76 @@ export default function Lunch() {
 									</TabsTrigger>
 									<TabsTrigger value='tuesday'>Вторник</TabsTrigger>
 									<TabsTrigger value='wednesday'>Среда</TabsTrigger>
-									<TabsTrigger value='thursday'>Четверг</TabsTrigger>
+									<TabsTrigger value='thirsday'>Четверг</TabsTrigger>
 									<TabsTrigger value='friday'>Пятница</TabsTrigger>
 								</TabsList>
 								<TabsContent
 									className='bg-[#F5F5F5] py-6 px-4 flex flex-col gap-4 -mt-1  '
 									value='monday'
 								>
-									{lunchItems.map(({ pic, name, price }) => (
+									{mondayItems.map(({ pic, name, price }) => (
 										<BreakfastItem
 											key={name}
 											pic={pic}
 											name={name}
 											price={price}
 											className='w-[899px]'
-                      // item={item}
-										// checked = {checked}
-                    // onChange={() => handleCheckbox(name)}
+										/>
+									))}
+								</TabsContent>
+								<TabsContent
+									className='bg-[#F5F5F5] py-6 px-4 flex flex-col gap-4 -mt-1 opacity-50   '
+									value='tuesday'
+								>
+									{tuesdayItems.map(({ pic, name, price }) => (
+										<BreakfastItem
+											key={name}
+											pic={pic}
+											name={name}
+											price={price}
+											className='w-[899px]'
+										/>
+									))}
+								</TabsContent>
+								<TabsContent
+									className='bg-[#F5F5F5] py-6 px-4 flex flex-col gap-4 -mt-1 opacity-50 '
+									value='wednesday'
+								>
+									{wednesdayItems.map(({ pic, name, price }) => (
+										<BreakfastItem
+											key={name}
+											pic={pic}
+											name={name}
+											price={price}
+											className='w-[899px]'
+										/>
+									))}
+								</TabsContent>
+								<TabsContent
+									className='bg-[#F5F5F5] py-6 px-4 flex flex-col gap-4 -mt-1 opacity-50 '
+									value='thirsday'
+								>
+									{thirsdayItems.map(({ pic, name, price }) => (
+										<BreakfastItem
+											key={name}
+											pic={pic}
+											name={name}
+											price={price}
+											className='w-[899px]'
+										/>
+									))}
+								</TabsContent>
+								<TabsContent
+									className='bg-[#F5F5F5] py-6 px-4 flex flex-col gap-4 -mt-1 opacity-50 '
+									value='friday'
+								>
+									{fridayItems.map(({ pic, name, price }) => (
+										<BreakfastItem
+											key={name}
+											pic={pic}
+											name={name}
+											price={price}
+											className='w-[899px]'
 										/>
 									))}
 								</TabsContent>
@@ -141,7 +251,7 @@ export default function Lunch() {
 						<SelectedItems />
 					</div>
 				</div>
-			</section> 
+			</section>
 		</>
 	);
 }
