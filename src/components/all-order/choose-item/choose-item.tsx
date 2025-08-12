@@ -8,10 +8,7 @@ import {
 	TableFooter,
 	TableRow,
 } from '@/components/ui/table';
-import iceCream from '@/assets/images/ice-cream.png';
-import capuchino from '@/assets/images/capuchino.png';
-import water from '@/assets/images/water.png';
-import cake from '@/assets/images/cake-peace.png';
+
 import {
 	Select,
 	SelectContent,
@@ -22,34 +19,9 @@ import {
 } from '@/components/ui/select';
 import Archive from '@/assets/icons/archive';
 import Check from '@/assets/icons/check';
+import { issueItems } from '../menu-data';
 export default function ChooseItem() {
-	const issueItems = [
-		{
-			pic: cake,
-			name: 'Клубничный торт со сливками и...',
-			price: '120 000 UZS',
-		},
-		{
-			pic: iceCream,
-			name: 'Клубничное мороженое',
-			price: '120 000 UZS',
-		},
-		{
-			pic: capuchino,
-			name: 'Капучино (средний)',
-			price: '120 000 UZS',
-		},
-		{
-			pic: capuchino,
-			name: 'Капучино (большой)',
-			price: '120 000 UZS',
-		},
-		{
-			pic: water,
-			name: 'Вода без газа Nestle 0,5',
-			price: '120 000 UZS',
-		},
-	];
+	
 
 	return (
 		<div className='bg-[#D9D9D9] z-10 absolute right-0 top-0  w-screen'>

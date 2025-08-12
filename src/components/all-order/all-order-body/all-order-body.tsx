@@ -5,7 +5,6 @@ import { Label } from '../../ui/label';
 import NewOrders from './new-orders';
 import InProcessOrders from './in-process-orders';
 import Delivered from './delivered';
-// import ChooseItem from '../choose-item/choose-item';
 
 export default function AllOrderBody() {
 	return (

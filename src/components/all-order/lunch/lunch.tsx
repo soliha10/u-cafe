@@ -8,18 +8,9 @@ import Sweet from '@/assets/icons/sweet';
 import { Button } from '@/components/ui/button';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import BreakfastItem from '@/components/common/breakfast-item';
-import kotlet from '@/assets/images/kotlet.png';
-import lapsha from '@/assets/images/lapsha.png';
 import SelectedItems from './selected-items';
-import manti from '@/assets/images/manti.png';
-import teftel from '@/assets/images/teftel.png';
-import chickenKotlet from '@/assets/images/chicken-kotlet.png';
-import gulyash from '@/assets/images/gulyash.png';
-import lagman from '@/assets/images/lagman.png';
-import bedro from '@/assets/images/bedro.png';
-import jarko from '@/assets/images/jarko.png';
-import garnir from '@/assets/images/garnir.png';
 import Eggs from '@/assets/icons/eggs';
+import { fridayItems, mondayItems, thirsdayItems, tuesdayItems, wednesdayItems } from '../menu-data';
 
 export default function Lunch() {
 	const menuItems = [
@@ -46,77 +37,6 @@ export default function Lunch() {
 		{
 			pic: <Sweet />,
 			name: 'Десерты',
-		},
-	];
-
-	const mondayItems = [
-		{
-			pic: kotlet,
-			name: 'Говяжьи котлеты 2 шт. с подливой / Гарнир рис+гречка / Хлеб / Салат',
-			price: 'В наличии: 130 шт.',
-			checked: false,
-		},
-		{
-			pic: lapsha,
-			name: 'Курица в сливочном соусе / Гарнир лапша триолли / Хлеб / Салат',
-			price: 'В наличии: 130 шт.',
-			checked: false,
-		},
-	];
-	const tuesdayItems = [
-		{
-			pic: manti,
-			name: 'Манты с говядиной / Кефир / Хлеб / Салат',
-			price: 'В наличии: 130 шт.',
-			checked: false,
-		},
-		{
-			pic: teftel,
-			name: 'Тефтели с подливой / Гарнир картофель фри / Хлеб / Салат',
-			price: 'В наличии: 130 шт.',
-			checked: false,
-		},
-	];
-	const wednesdayItems = [
-		{
-			pic: chickenKotlet,
-			name: 'Куриные котлеты 2 шт / Гарнир рис+пюре / Хлеб / Салат',
-			price: 'В наличии: 130 шт.',
-			checked: false,
-		},
-		{
-			pic: gulyash,
-			name: 'Гуляш с говядиной / Гарнир рис+пюре / Хлеб / Салат',
-			price: 'В наличии: 130 шт.',
-			checked: false,
-		},
-	];
-	const thirsdayItems = [
-		{
-			pic: lagman,
-			name: 'Ковурма лагман с яйцом / Хлеб / Салат',
-			price: 'В наличии: 130 шт.',
-			checked: false,
-		},
-		{
-			pic: bedro,
-			name: 'Куриное бедро / Гарнир картофель по деревенски / Хлеб / Салат',
-			price: 'В наличии: 130 шт.',
-			checked: false,
-		},
-	];
-	const fridayItems = [
-		{
-			pic: jarko,
-			name: 'Жаркое с говядиной / Хлеб / Салат',
-			price: 'В наличии: 130 шт.',
-			checked: false,
-		},
-		{
-			pic: garnir,
-			name: 'Курица с овощами / Гарнир рис+кукуруза / Хлеб / Салат',
-			price: 'В наличии: 130 шт.',
-			checked: false,
 		},
 	];
 

@@ -6,15 +6,10 @@ import Sweet from '@/assets/icons/sweet';
 import { Button } from '@/components/ui/button';
 import SelectedItems from '../lunch/selected-items';
 import BreakfastItem from '@/components/common/breakfast-item';
-import cola1_5 from '@/assets/images/cola-1.5.png';
-import cola0_5 from '@/assets/images/cola-0.5.png';
-import cola2_5 from '@/assets/images/cola-125.png';
-import pepsi from '@/assets/images/pepsi.png';
-import fanta from '@/assets/images/fanta.png';
-import rich from '@/assets/images/rich-apple.png';
 import Lunch from '@/assets/icons/lunch';
 import CupBlue from '@/assets/icons/cup-blue';
 import Eggs from '@/assets/icons/eggs';
+import { drinksItems } from '../menu-data';
 export default function Drinks() {
 	const menuItems = [
 		{
@@ -42,38 +37,7 @@ export default function Drinks() {
 			name: 'Десерты',
 		},
 	];
-	const breakfastItems = [
-		{
-			pic: cola1_5,
-			name: 'Coca- cola 1,5',
-			price: 'В наличии: 130 шт.',
-		},
-		{
-			pic: cola0_5,
-			name: 'Coca-cola 0,5',
-			price: 'В наличии: 130 шт.',
-		},
-		{
-			pic: cola2_5,
-			name: 'Coca-cola 250 ml',
-			price: 'В наличии: 130 шт.',
-		},
-		{
-			pic: pepsi,
-			name: 'Pepsi 250 ml',
-			price: 'В наличии: 130 шт.',
-		},
-		{
-			pic: fanta,
-			name: 'Fanta 0,5',
-			price: 'В наличии: 130 шт.',
-		},
-		{
-			pic: rich,
-			name: 'Сок RICH 200 ml яблоко',
-			price: 'В наличии: 130 шт.',
-		},
-	];
+
 	return (
 		<>
 			<Header />
@@ -116,7 +80,7 @@ export default function Drinks() {
 							</ul>
 
 							<ul className='flex flex-col gap-4'>
-								{breakfastItems.map(({ pic, name, price }) => (
+								{drinksItems.map(({ pic, name, price }) => (
 									<BreakfastItem pic={pic} name={name} price={price} />
 								))}
 							</ul>

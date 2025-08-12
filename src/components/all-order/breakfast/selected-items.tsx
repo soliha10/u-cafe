@@ -7,10 +7,7 @@ import {
 	TableFooter,
 	TableRow,
 } from '@/components/ui/table';
-import iceCream from '@/assets/images/ice-cream.png';
-import capuchino from '@/assets/images/capuchino.png';
-import water from '@/assets/images/water.png';
-import cake from '@/assets/images/cake-peace.png';
+
 import {
 	Select,
 	SelectContent,
@@ -28,35 +25,8 @@ import {
 import { ChevronDownIcon } from 'lucide-react';
 import { Calendar } from '@/components/ui/calendar';
 import { useState } from 'react';
+import { issueItems } from '../menu-data';
 export default function SelectedItems() {
-	const issueItems = [
-		{
-			pic: cake,
-			name: 'Клубничный торт со сливками и...',
-			price: '120 000 UZS',
-		},
-		{
-			pic: iceCream,
-			name: 'Клубничное мороженое',
-			price: '120 000 UZS',
-		},
-		{
-			pic: capuchino,
-			name: 'Капучино (средний)',
-			price: '120 000 UZS',
-		},
-		{
-			pic: capuchino,
-			name: 'Капучино (большой)',
-			price: '120 000 UZS',
-		},
-		{
-			pic: water,
-			name: 'Вода без газа Nestle 0,5',
-			price: '120 000 UZS',
-		},
-	];
-
 	const [open, setOpen] = useState(false);
 	const [date, setDate] = useState<Date | undefined>(undefined);
 
@@ -64,7 +34,6 @@ export default function SelectedItems() {
 		<div className='  absolute right-0 top-0 '>
 			<div className='w-[505px] ms-auto  bg-white'>
 				<div className=' ps-6 w-[413px]  '>
-		
 					<ul className=' pt-4 flex flex-col gap-4 pb-11'>
 						{issueItems.map(({ pic, name, price }) => (
 							<IssuedItem key={name} pic={pic} name={name} price={price} />

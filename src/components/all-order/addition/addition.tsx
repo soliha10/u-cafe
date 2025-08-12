@@ -5,17 +5,11 @@ import Sweet from '@/assets/icons/sweet';
 import { Button } from '@/components/ui/button';
 import SelectedItems from '../lunch/selected-items';
 import BreakfastItem from '@/components/common/breakfast-item';
-import laysYellow from '@/assets/images/lays-yellow.png';
-import laysBlue from '@/assets/images/lays-blue.png';
-import cheetos from '@/assets/images/cheetos.png';
-import kitKat from '@/assets/images/kit-kat.png';
-import twix from '@/assets/images/twix.png';
-import bounty from '@/assets/images/bounty.png';
-import snickers from '@/assets/images/snickers.png';
 import Lunch from '@/assets/icons/lunch';
 import Eggs from '@/assets/icons/eggs';
 import ChocolateBlue from '@/assets/icons/chocolate-blue';
 import Cup from '@/assets/icons/cup';
+import { additionItems } from '../menu-data';
 export default function Addition() {
 	const menuItems = [
 		{
@@ -43,43 +37,7 @@ export default function Addition() {
 			name: 'Десерты',
 		},
 	];
-	const breakfastItems = [
-		{
-			pic: laysYellow,
-			name: 'Чипсы LAYS 37 гр с сыром',
-			price: 'В наличии: 130 шт.',
-		},
-		{
-			pic: laysBlue,
-			name: 'Чипсы LAYS 37 гр со сметаной и зеленью',
-			price: 'В наличии: 130 шт.',
-		},
-		{
-			pic: cheetos,
-			name: 'CHEETOS 47 гр',
-			price: 'В наличии: 130 шт.',
-		},
-		{
-			pic: kitKat,
-			name: 'KIT-KAT 40 гр',
-			price: 'В наличии: 130 шт.',
-		},
-		{
-			pic: twix,
-			name: 'TWIX 55 гр',
-			price: 'В наличии: 130 шт.',
-		},
-		{
-			pic: bounty,
-			name: 'BOUNTY',
-			price: 'В наличии: 130 шт.',
-		},
-		{
-			pic: snickers,
-			name: 'SNICKERS 50 гр',
-			price: 'В наличии: 130 шт.',
-		},
-	];
+	
 	return (
 		<>
 			<Header />
@@ -122,7 +80,7 @@ export default function Addition() {
 							</ul>
 
 							<ul className='flex flex-col gap-4'>
-								{breakfastItems.map(({ pic, name, price }) => (
+								{additionItems.map(({ pic, name, price }) => (
 									<BreakfastItem pic={pic} name={name} price={price} />
 								))}
 							</ul>

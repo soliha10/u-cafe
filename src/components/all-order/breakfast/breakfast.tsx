@@ -9,15 +9,9 @@ import Cup from '@/assets/icons/cup';
 import Chocolate from '@/assets/icons/chocolate';
 import Pp from '@/assets/icons/pp';
 import Sweet from '@/assets/icons/sweet';
-import chicken from '@/assets/images/chicken.png';
-import meat from '@/assets/images/samsa-meat.png';
-import pumpkin from '@/assets/images/samsa-pumpkin.png';
-import samsa from '@/assets/images/samsa.png';
-import blini from '@/assets/images/blini.png';
-import bliniCurd from '@/assets/images/blini-curd.png';
-import sweet from '@/assets/images/sweet-berry.png';
 import BreakfastItem from '@/components/common/breakfast-item';
 import SelectedItems from './selected-items';
+import { breakfastItems } from '../menu-data';
 
 export default function Breakfast() {
 	const menuItems = [
@@ -47,43 +41,7 @@ export default function Breakfast() {
 		},
 	];
 
-	const breakfastItems = [
-		{
-			pic: samsa,
-			name: 'Самса с мясом',
-			price: 'В наличии: 130 шт.',
-		},
-		{
-			pic: chicken,
-			name: 'Самса с курицей',
-			price: 'В наличии: 130 шт.',
-		},
-		{
-			pic: meat,
-			name: 'Самса c мясом и картофелем',
-			price: 'В наличии: 130 шт.',
-		},
-		{
-			pic: pumpkin,
-			name: 'Самса с тыквой',
-			price: 'В наличии: 130 шт.',
-		},
-		{
-			pic: blini,
-			name: 'Блинчики с мясом',
-			price: 'В наличии: 130 шт.',
-		},
-		{
-			pic: bliniCurd,
-			name: 'Блинчики с творогом',
-			price: 'В наличии: 130 шт.',
-		},
-		{
-			pic: sweet,
-			name: 'Сырники со сгущеным молоком и малиной',
-			price: 'В наличии: 130 шт.',
-		},
-	];
+
 
 	return (
 		<>

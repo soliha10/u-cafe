@@ -7,10 +7,7 @@ import {
 	TableFooter,
 	TableRow,
 } from '@/components/ui/table';
-import iceCream from '@/assets/images/ice-cream.png';
-import capuchino from '@/assets/images/capuchino.png';
-import water from '@/assets/images/water.png';
-import cake from '@/assets/images/cake-peace.png';
+
 import {
 	Select,
 	SelectContent,
@@ -29,34 +26,8 @@ import { ChevronDownIcon } from 'lucide-react';
 import { Calendar } from '@/components/ui/calendar';
 import { useState } from 'react';
 import EmptyLunch from '@/assets/icons/empty-lunch';
+import { issueItems } from '../menu-data';
 export default function SelectedItems() {
-	const issueItems = [
-		{
-			pic: cake,
-			name: 'Клубничный торт со сливками и...',
-			price: '120 000 UZS',
-		},
-		{
-			pic: iceCream,
-			name: 'Клубничное мороженое',
-			price: '120 000 UZS',
-		},
-		{
-			pic: capuchino,
-			name: 'Капучино (средний)',
-			price: '120 000 UZS',
-		},
-		{
-			pic: capuchino,
-			name: 'Капучино (большой)',
-			price: '120 000 UZS',
-		},
-		{
-			pic: water,
-			name: 'Вода без газа Nestle 0,5',
-			price: '120 000 UZS',
-		},
-	];
 
 	const [open, setOpen] = useState(false);
 	const [date, setDate] = useState<Date | undefined>(undefined);
