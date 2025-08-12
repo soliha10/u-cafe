@@ -1,12 +1,12 @@
 import './App.css';
-import Drinks from './components/all-order/drinks/drinks';
+import Addition from './components/all-order/addition/addition';
 // import LoginPage from './components/login/login-page'
 
 function App() {
 	return (
 		<>
 			{/* <LoginPage/> */}
-			<Drinks/>
+			<Addition/>
 		</>
 	);
 }
