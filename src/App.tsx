@@ -1,12 +1,12 @@
 import './App.css';
-import PrintOrder from './components/all-order/all-order-body/print-order';
+import OrderHistory from './components/order-history/order-history';
 // import LoginPage from './components/login/login-page'
 
 function App() {
 	return (
 		<>
 			{/* <LoginPage/> */}
-		<PrintOrder/>
+			<OrderHistory/>
 		</>
 	);
 }

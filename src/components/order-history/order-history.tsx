@@ -1,0 +1,102 @@
+import { ChevronDownIcon } from 'lucide-react';
+import Header from '../all-order/header';
+import { Button } from '../ui/button';
+import { Popover, PopoverContent, PopoverTrigger } from '../ui/popover';
+import { Calendar } from '../ui/calendar';
+import { useState } from 'react';
+import {
+	Select,
+	SelectContent,
+	SelectGroup,
+	SelectItem,
+	SelectTrigger,
+	SelectValue,
+} from '../ui/select';
+import OrderHistoryItem from './order-history-item';
+// import { Checkbox } from '../ui/checkbox';
+
+export default function OrderHistory() {
+	const [open, setOpen] = useState(false);
+	const [date, setDate] = useState<Date | undefined>(undefined);
+	return (
+		<>
+			<Header />
+			<section className='bg-white border-b border-[#7d858b33] '>
+				<div className='w-full max-w-[1432px] px-5 mx-auto '>
+					<div className='flex justify-between items-center py-[18px]  '>
+						<h2 className='text-2xl font-semibold'>История заказов (166)</h2>
+						<div className='flex items-center gap-4'>
+							<Popover open={open} onOpenChange={setOpen}>
+								<PopoverTrigger asChild>
+									<Button
+										variant='outline'
+										id='date'
+										className='w-auto justify-between font-normal px-3 py-2'
+									>
+										{date ? date.toLocaleDateString() : 'Select date'}
+										<ChevronDownIcon className='w-3 h-3' />
+									</Button>
+								</PopoverTrigger>
+								<PopoverContent
+									className='w-auto overflow-hidden p-0'
+									align='start'
+								>
+									<Calendar
+										mode='single'
+										selected={date}
+										captionLayout='dropdown'
+										onSelect={(date) => {
+											setDate(date);
+											setOpen(false);
+										}}
+									/>
+								</PopoverContent>
+							</Popover>
+							<Select>
+								<SelectTrigger className='w-[180px] text-[#2F3138] '>
+									<SelectValue  placeholder='Все способы оплаты' />
+								</SelectTrigger>
+								<SelectContent>
+									<SelectGroup>
+										<SelectItem value='apple'>Переводом</SelectItem>
+										<SelectItem value='banana'>Наличными</SelectItem>
+										<SelectItem value='blueberry'>Click</SelectItem>
+										<SelectItem value='grapes'>Payme</SelectItem>
+									</SelectGroup>
+								</SelectContent>
+							</Select>
+							<Select>
+								<SelectTrigger className='w-[180px]'>
+									<SelectValue placeholder='Все типы заказов' />
+								</SelectTrigger>
+								<SelectContent>
+									<SelectGroup>
+										<SelectItem value='apple'>С собой</SelectItem>
+										<SelectItem value='banana'>На месте</SelectItem>
+										<SelectItem value='blueberry'>В кабинет</SelectItem>
+									</SelectGroup>
+								</SelectContent>
+							</Select>
+						</div>
+					</div>
+				</div>
+			</section>
+
+      <section className='bg-[#F5F5F5] '>
+      <div className='w-full max-w-[1432px] px-5 mx-auto '>
+        <div className='pt-6  '>
+          <ul className='flex flex-col gap-4'>
+            <OrderHistoryItem/>
+            <OrderHistoryItem/>
+            <OrderHistoryItem/>
+            <OrderHistoryItem/>
+            <OrderHistoryItem/>
+            <OrderHistoryItem/>
+            <OrderHistoryItem/>
+          </ul>
+        </div>
+      </div>
+      </section>
+		</>
+	);
+}
