@@ -104,3 +104,27 @@ export 	const newOrders = [
     gift: true,
   },
 ];
+
+export const readyOrders = [
+  {
+    name: 'ID заказа',
+    value: '321'
+  },
+  {
+    name: 'Имя кассира',
+    value: 'Алимова Зилола Фахритдиновна'
+  },
+  {
+    name: 'Дата и время',
+    value: '2023-10-20, 10:13:21'
+  },
+  {
+    name: 'Тип заказа',
+    value: 'На месте (стол #123)'
+  },
+  {
+    name: 'Способ оплаты',
+    value: 'Наличными'
+  },
+
+]

@@ -1,12 +1,12 @@
 import './App.css';
-import Addition from './components/all-order/addition/addition';
+import PrintOrder from './components/all-order/all-order-body/print-order';
 // import LoginPage from './components/login/login-page'
 
 function App() {
 	return (
 		<>
 			{/* <LoginPage/> */}
-			<Addition/>
+		<PrintOrder/>
 		</>
 	);
 }

@@ -5,7 +5,7 @@ export const buttonVariants = cva(
 	{
 		variants: {
 			variant: {
-				default: 'bg-primary text-primary-foreground shadow-xs ',
+				default: 'bg-transparent text-primary-foreground cursor-pointer  ',
 				destructive:
 					'bg-destructive text-white shadow-xs hover:bg-destructive/90 focus-visible:ring-destructive/20 dark:focus-visible:ring-destructive/40 dark:bg-destructive/60',
 				outline:
@@ -20,7 +20,7 @@ export const buttonVariants = cva(
 				menu: ' border border-[rgba(125, 133, 139, 0.20)] rounded-[5px] bg-white '
 			},
 			size: {
-				default: 'h-9 px-4 py-2 ',
+				default: 'h-auto ',
 				sm: 'h-8 rounded-md gap-1.5 px-3 has-[>svg]:px-2.5',
 				lg: 'h-10 rounded-md px-6 has-[>svg]:px-4',
 				icon: 'size-9',
