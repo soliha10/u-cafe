@@ -9,7 +9,7 @@ export const buttonVariants = cva(
 				destructive:
 					'bg-destructive text-white shadow-xs hover:bg-destructive/90 focus-visible:ring-destructive/20 dark:focus-visible:ring-destructive/40 dark:bg-destructive/60',
 				outline:
-					'border bg-background shadow-xs hover:bg-accent hover:text-accent-foreground dark:bg-input/30 dark:border-input dark:hover:bg-input/50',
+					'border bg-background rounded-full shadow-xs text-[#2F3138] hover:bg-accent hover:text-accent-foreground dark:bg-input/30 dark:border-input dark:hover:bg-input/50',
 				secondary:
 					'bg-secondary text-secondary-foreground shadow-xs hover:bg-secondary/80',
 				ghost:
@@ -19,6 +19,7 @@ export const buttonVariants = cva(
 				archive: 'bg-[#5566ff19] rounded-[5px] cursor-pointer text-[#5566FF] ',
 				menu: ' border border-[rgba(125, 133, 139, 0.20)] rounded-[5px] bg-white ',
 				history: ' border border-[#56F] rounded-[5px]  ',
+				date: ' border border-[#E5E7E8] rounded-[5px]  ',
 			},
 			size: {
 				default: 'h-auto ',

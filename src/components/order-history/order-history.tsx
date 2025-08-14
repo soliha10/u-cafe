@@ -13,6 +13,14 @@ import {
 	SelectValue,
 } from '../ui/select';
 import OrderHistoryItem from './order-history-item';
+import {
+	Pagination,
+	PaginationContent,
+	PaginationItem,
+	PaginationLink,
+	PaginationNext,
+	PaginationPrevious,
+} from '../ui/pagination';
 // import { Checkbox } from '../ui/checkbox';
 
 export default function OrderHistory() {
@@ -29,7 +37,7 @@ export default function OrderHistory() {
 							<Popover open={open} onOpenChange={setOpen}>
 								<PopoverTrigger asChild>
 									<Button
-										variant='outline'
+										variant='date'
 										id='date'
 										className='w-auto justify-between font-normal px-3 py-2'
 									>
@@ -52,9 +60,10 @@ export default function OrderHistory() {
 									/>
 								</PopoverContent>
 							</Popover>
+
 							<Select>
-								<SelectTrigger className='w-[180px] text-[#2F3138] '>
-									<SelectValue  placeholder='Все способы оплаты' />
+								<SelectTrigger className='w-[180px] text-[#2F3138] rounded-[5px]  shadow-none '>
+									<SelectValue placeholder='Все способы оплаты' />
 								</SelectTrigger>
 								<SelectContent>
 									<SelectGroup>
@@ -65,8 +74,9 @@ export default function OrderHistory() {
 									</SelectGroup>
 								</SelectContent>
 							</Select>
+
 							<Select>
-								<SelectTrigger className='w-[180px]'>
+								<SelectTrigger className='w-[180px] rounded-[5px]  shadow-none '>
 									<SelectValue placeholder='Все типы заказов' />
 								</SelectTrigger>
 								<SelectContent>
@@ -82,21 +92,44 @@ export default function OrderHistory() {
 				</div>
 			</section>
 
-      <section className='bg-[#F5F5F5] '>
-      <div className='w-full max-w-[1432px] px-5 mx-auto '>
-        <div className='pt-6  '>
-          <ul className='flex flex-col gap-4'>
-            <OrderHistoryItem/>
-            <OrderHistoryItem/>
-            <OrderHistoryItem/>
-            <OrderHistoryItem/>
-            <OrderHistoryItem/>
-            <OrderHistoryItem/>
-            <OrderHistoryItem/>
-          </ul>
-        </div>
-      </div>
-      </section>
+			<section className='bg-[#F5F5F5] '>
+				<div className='w-full max-w-[1432px] px-5 mx-auto '>
+					<div className='pt-6 pb-9 '>
+						<ul className='flex flex-col gap-4 mb-9 '>
+							<OrderHistoryItem />
+							<OrderHistoryItem />
+							<OrderHistoryItem />
+							<OrderHistoryItem />
+							<OrderHistoryItem />
+							<OrderHistoryItem />
+							<OrderHistoryItem />
+						</ul>
+
+						<Pagination className='text-[14px] ' >
+							<PaginationContent>
+								<PaginationItem >
+									<PaginationPrevious className='' href='#' />
+								</PaginationItem>
+								<PaginationItem className='border border-[#ECEDEE] rounded-full text-[#7D848B] '>
+									<PaginationLink href='#'>1</PaginationLink>
+								</PaginationItem>
+								<PaginationItem className='border border-[#ECEDEE] rounded-full text-[#7D848B] '>
+									<PaginationLink href='#' isActive>
+										2
+									</PaginationLink>
+								</PaginationItem>
+								<PaginationItem className='border border-[#ECEDEE] rounded-full text-[#7D848B] '>
+									<PaginationLink href='#'>3</PaginationLink>
+								</PaginationItem>
+							
+								<PaginationItem>
+									<PaginationNext href='#' />
+								</PaginationItem>
+							</PaginationContent>
+						</Pagination>
+					</div>
+				</div>
+			</section>
 		</>
 	);
 }
