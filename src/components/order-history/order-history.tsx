@@ -21,6 +21,7 @@ import {
 	PaginationNext,
 	PaginationPrevious,
 } from '../ui/pagination';
+import EmptyOrder from '@/assets/icons/empty-order';
 // import { Checkbox } from '../ui/checkbox';
 
 export default function OrderHistory() {
@@ -41,7 +42,7 @@ export default function OrderHistory() {
 										id='date'
 										className='w-auto justify-between font-normal px-3 py-2'
 									>
-										{date ? date.toLocaleDateString() : 'Select date'}
+										{date ? date.toLocaleDateString() : 'Выбрать дату'}
 										<ChevronDownIcon className='w-3 h-3' />
 									</Button>
 								</PopoverTrigger>
@@ -94,7 +95,7 @@ export default function OrderHistory() {
 
 			<section className='bg-[#F5F5F5] '>
 				<div className='w-full max-w-[1432px] px-5 mx-auto '>
-					<div className='pt-6 pb-9 '>
+					<div className='pt-6 pb-9 h-full '>
 						<ul className='flex flex-col gap-4 mb-9 '>
 							<OrderHistoryItem />
 							<OrderHistoryItem />
@@ -105,9 +106,9 @@ export default function OrderHistory() {
 							<OrderHistoryItem />
 						</ul>
 
-						<Pagination className='text-[14px] ' >
+						<Pagination className='text-[14px] '>
 							<PaginationContent>
-								<PaginationItem >
+								<PaginationItem>
 									<PaginationPrevious className='' href='#' />
 								</PaginationItem>
 								<PaginationItem className='border border-[#ECEDEE] rounded-full text-[#7D848B] '>
@@ -121,12 +122,19 @@ export default function OrderHistory() {
 								<PaginationItem className='border border-[#ECEDEE] rounded-full text-[#7D848B] '>
 									<PaginationLink href='#'>3</PaginationLink>
 								</PaginationItem>
-							
+
 								<PaginationItem>
 									<PaginationNext href='#' />
 								</PaginationItem>
 							</PaginationContent>
 						</Pagination>
+
+						<div className=' flex-col items-center justify-center h-dvh hidden  '>
+							<EmptyOrder />
+							<p className='w-[328px] text-[#2F3138] text-center '>
+								На данный момент у Вас нет ни одного завершенного заказа
+							</p>
+						</div>
 					</div>
 				</div>
 			</section>
