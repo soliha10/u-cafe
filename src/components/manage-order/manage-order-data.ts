@@ -6,7 +6,7 @@ import bliniCurd from '@/assets/images/blini-curd.png';
 import sweet from '@/assets/images/sweet-berry.png';
 import brusketta from '@/assets/images/brusetta.png';
 
-export const manageOrder = [
+export  const manageOrder = [
 	{
 		pic: chicken,
 		name: 'Самса с курицей',

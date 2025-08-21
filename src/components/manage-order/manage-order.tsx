@@ -16,7 +16,7 @@ import {
 	PaginationNext,
 	PaginationPrevious,
 } from '../ui/pagination';
-import { manageOrder } from './manage-order';
+import { manageOrder } from './manage-order-data';
 
 export default function ManageOrder() {
 	const menuItems = [
