@@ -1,5 +1,5 @@
 import './App.css';
-import AllOrder from './components/all-order';
+import ManageOrder from './components/manage-order/manage-order';
 // import OrderHistory from './components/order-history/order-history';
 // import LoginPage from './components/login/login-page'
 
@@ -8,7 +8,7 @@ function App() {
 		<>
 			{/* <LoginPage/> */}
 			{/* <OrderHistory/> */}
-			<AllOrder/>
+			<ManageOrder/>
 		</>
 	);
 }
