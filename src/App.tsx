@@ -1,5 +1,6 @@
 import './App.css';
-import ManageOrder from './components/manage-order/manage-order';
+import EditModal from './components/manage-order/edit-modal';
+// import ManageOrder from './components/manage-order/manage-order';
 // import OrderHistory from './components/order-history/order-history';
 // import LoginPage from './components/login/login-page'
 
@@ -8,7 +9,8 @@ function App() {
 		<>
 			{/* <LoginPage/> */}
 			{/* <OrderHistory/> */}
-			<ManageOrder/>
+			{/* <ManageOrder/> */}
+			<EditModal/>
 		</>
 	);
 }
