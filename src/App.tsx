@@ -1,16 +1,12 @@
 import './App.css';
-import DeleteModal from './components/manage-order/delete-modal';
-// import AddModal from './components/manage-order/add-modal';
-// import ManageOrder from './components/manage-order/manage-order';
-// import OrderHistory from './components/order-history/order-history';
-// import LoginPage from './components/login/login-page'
+import AddWorkerModal from './components/manage-workers/add-worker-modal';
+
 
 function App() {
 	return (
 		<>
 			{/* <LoginPage/> */}
-			{/* <ManageOrder/> */}
-			<DeleteModal/>
+		<AddWorkerModal/>
 		</>
 	);
 }
