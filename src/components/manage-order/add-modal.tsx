@@ -38,6 +38,16 @@ const formSchema = z.object({
 	}),
 });
 
+function formatDate(date: Date | undefined) {
+	if (!date) {
+		return '';
+	}
+	const weekday = date.toLocaleDateString('ru-RU', {
+		weekday: 'long',
+	});
+	return weekday.charAt(0).toUpperCase() + weekday.slice(1);
+}
+
 export default function AddModal() {
 	const menuItems = [
 		{
@@ -69,9 +79,10 @@ export default function AddModal() {
 
 	function onSubmit(values: z.infer<typeof formSchema>) {
 		console.log(values);
-	};
+	}
 	const [open, setOpen] = useState(false);
 	const [date, setDate] = useState<Date | undefined>(undefined);
+	const [value, setValue] = useState('');
 	return (
 		<div className='bg-[#F5F5F5] h-full pt-[178px] pb-[138px] '>
 			<div className='w-full max-w-[1432px] px-5 mx-auto '>
@@ -154,9 +165,11 @@ export default function AddModal() {
 													<Button
 														variant='outline'
 														id='date'
-                            className='w-[212px]  py-[14px] px-4 rounded-[5px] border-[#7d858b33] text-[14px] text-[#2F3138]    '
-                            >
-														{date ? date.toLocaleDateString() : 'Выберите дату'}
+														value={value.toUpperCase()}
+														className='w-[212px]  py-[14px] px-4 font-normal rounded-[5px] border-[#7d858b33] text-[14px] text-[#2F3138]  flex justify-between  '
+													>
+														{date ? formatDate(date) : 'Выберите дату'}
+
 														<ChevronDownIcon className='w-3 h-3' />
 													</Button>
 												</PopoverTrigger>
@@ -171,6 +184,7 @@ export default function AddModal() {
 														onSelect={(date) => {
 															setDate(date);
 															setOpen(false);
+															setValue(formatDate(date));
 														}}
 													/>
 												</PopoverContent>
@@ -191,7 +205,7 @@ export default function AddModal() {
 												<Input
 													placeholder='12'
 													{...field}
-													className='w-[212px]  py-[14px] px-4 rounded-[5px] border-[#7d858b33] text-[14px] text-[#2F3138]    '
+													className='w-[212px] placeholder:text-[#2F3138]  py-[14px] px-4 rounded-[5px] border-[#7d858b33] text-[14px] text-[#2F3138]    '
 												/>
 											</FormControl>
 
@@ -211,7 +225,7 @@ export default function AddModal() {
 												<Input
 													placeholder='25 000'
 													{...field}
-													className='w-[212px]  py-[14px] px-4 rounded-[5px] border-[#7d858b33] text-[14px] text-[#2F3138]    '
+													className='w-[212px] placeholder:text-[#2F3138]  py-[14px] px-4 rounded-[5px] border-[#7d858b33] text-[14px] text-[#2F3138]    '
 												/>
 											</FormControl>
 

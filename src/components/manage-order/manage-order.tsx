@@ -17,6 +17,7 @@ import {
 	PaginationPrevious,
 } from '../ui/pagination';
 import { manageOrder } from './manage-order-data';
+import EmptyLunch from '@/assets/icons/empty-lunch';
 
 export default function ManageOrder() {
 	const menuItems = [
@@ -81,6 +82,7 @@ export default function ManageOrder() {
 								</li>
 							))}
 						</ul>
+						<div>
 						<ul className='flex flex-col gap-4 mb-9 '>
 							{manageOrder.map(({ pic, name, count, price }) => (
 								<ManageItem
@@ -120,7 +122,14 @@ export default function ManageOrder() {
 								</PaginationItem>
 							</PaginationContent>
 						</Pagination>
+
+						</div>
+						<div className='hidden items-center justify-center text-center mx-auto flex-col gap-3 mt-64 mb-40 w-[300px] '>
+							<EmptyLunch/>
+							<p>На данный момент Вы не добавили ни одного блюда в меню</p>
+						</div>
 					</div>
+
 				</div>
 			</section>
 		</>
